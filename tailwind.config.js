@@ -8,14 +8,19 @@ export default {
     extend: {
       colors: {
         "primary": "#F6F5FF",
+        "btn-primary": "#E8E7FE",
         "secondary": "#1A0AD7",
-        "dark": "#4B4B4E"
+        "tertiary": "#4435F6",
+        "dark": "#4B4B4E",
+        "gray": "#D2CEFD1A",
+        "gray-font": "#DBD8FD"
       },
       backgroundImage: {
         "hero-line": "url('./src/assets/Hero-lines.png')"
       },
       fontFamily: {
-        "cerebri": ["CeribriSansPro", "san-serif"]
+        "cerebri": ["CeribriSansPro", "san-serif"],
+        "cerebri-light": ["CeribriLightPro", "san-serif"]
       }
     },
   },

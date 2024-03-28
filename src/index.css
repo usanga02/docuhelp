@@ -2,7 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  margin: 0;
+  padding: 0
+}
+
 @font-face {
   font-family: "CeribriSansPro";
   src: url("../public/fonts/CerebriSansPro-Heavy.ttf")
+}
+
+@font-face {
+  font-family: "CeribriLightPro";
+  src: url("../public/fonts/CerebriSansPro-Bold.ttf")
+}
+
+.custom-marker > ::marker {
+  font-family: 'Font Awesome 5 Free';
+  font-size: 20px;
+  font-weight: 700;
+  content: '\f058';
+  color: blue
+}
+
+.single-marker > li:first-child::marker {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  font-size: 10px;
+  content: '\f111';
+  color: #18C718
+}
+
+.custom-marker > li {
+  padding-left: 0.6rem;
+  margin-left: 0.5rem;
+}
+
+.single-marker > li {
+  padding-left: 0.5rem;
 }
