@@ -13,7 +13,7 @@ const data = [
   },
   {
     title: "Trained on your data",
-    message: "Access to a backend system to see what prompts staff are sending and results generated"
+    message: "Models can be built that's trained solely on your company data and documents. Analytics and fine tuning of models based on specific use case"
   },
 ]
 

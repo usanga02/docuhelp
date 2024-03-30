@@ -13,7 +13,8 @@ export default {
         "tertiary": "#4435F6",
         "dark": "#4B4B4E",
         "gray": "#D2CEFD1A",
-        "gray-font": "#DBD8FD"
+        "gray-font": "#DBD8FD",
+        "dark-night": "#0D0C0D",
       },
       backgroundImage: {
         "hero-line": "url('./src/assets/Hero-lines.png')"
