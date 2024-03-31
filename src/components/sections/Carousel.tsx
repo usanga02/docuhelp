@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import SlideComponent from '../slideComponent';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {
   slides: {
@@ -8,32 +8,37 @@ type Props = {
     title: string
     subtitle: string
   }[]
+  currentSlide: number
+  setCurrentSlide: Dispatch<SetStateAction<number>>
 }
 
-const Carousel = ({ slides }: Props) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+const Carousel = ({ slides, currentSlide, setCurrentSlide }: Props) => {
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000);
-
-    return () => clearInterval(intervalId);
-  }, [currentSlide]);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+  //   }, 3000);
+  //
+  //   return () => clearInterval(intervalId);
+  // }, [currentSlide]);
 
   return (
     <>
-      {slides.map((slide, index) => (
-        index === currentSlide && (
-          <motion.div
-            initial={{ y: 550 }}
-            animate={{ y: 0 }}
-            exit={{ y: -550 }}
-            transition={{ duration: 1, ease: 'backOut' }}
-            key={index}>
-            <SlideComponent image={slide.image} title={slide.title} subtitle={slide.subtitle} />
-          </motion.div>
-        )))}
+      <AnimatePresence mode='popLayout'>
+        {slides.map((slide, index) => (
+          index === currentSlide && (
+            <motion.div
+              initial={{ y: 550 }}
+              animate={{ y: 0 }}
+              exit={{ y: -600, z: -10 }}
+              transition={{ duration: 1, ease: 'backOut' }}
+              key={index}>
+              <SlideComponent {...slide} />
+            </motion.div>
+          )
+          // : index === currentSlide + 1) && <SlideComponent {...slide} />
+        ))}
+      </AnimatePresence>
     </>
   );
 };

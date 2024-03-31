@@ -3,11 +3,18 @@ import image from "/src/assets/Switch.svg"
 
 type Props = {
   title: string
+  onClick: () => void
+  className?: string
 }
 
-const ServiceButtons = ({ title }: Props) => {
+const ServiceButtons = ({ onClick, title, className }: Props) => {
   return (
-    <li className='py-4 px-10 w-fit flex text-lg font-bold bg-tertiary rounded-full items-center'><img className='mr-10 ' src={image} />{title}</li>
+    <li
+      onClick={onClick}
+      className={'cursor-pointer py-4 px-10 w-fit flex text-lg font-bold bg-tertiary rounded-full items-center ' + className}>
+      <img className='mr-10 ' src={image} />
+      {title}
+    </li>
   )
 }
 

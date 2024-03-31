@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { cn } from "../libs/utils";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
   data: { title: string; message: string }[];
@@ -30,7 +32,7 @@ const Accordion = ({ data }: Props) => {
                   {data.title}
                 </div>
                 <div className="text-3xl">
-                  {activeIndex === index ? "-" : "+"}
+                  {activeIndex === index ? <FontAwesomeIcon icon={faChevronDown} /> : <FontAwesomeIcon icon={faChevronUp} />}
                 </div>
               </div>
               {activeIndex === index && (

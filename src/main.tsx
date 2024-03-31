@@ -6,8 +6,6 @@ import { AnimatePresence } from 'framer-motion'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AnimatePresence mode='popLayout'>
-      <App />
-    </AnimatePresence>
+    <App />
   </React.StrictMode>,
 )

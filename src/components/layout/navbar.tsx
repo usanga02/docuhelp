@@ -9,8 +9,8 @@ const Navbar = (props: Props) => {
       <div className='flex items-center justify-between gap-10'>
         <img src={logo} width={150} height={150} />
         <ul className='flex gap-10 font-semibold'>
-          <li>Support</li>
-          <li>Pricing</li>
+          <li className='cursor-pointer'>Support</li>
+          <li className='cursor-pointer'>Pricing</li>
         </ul>
       </div>
       <div>
