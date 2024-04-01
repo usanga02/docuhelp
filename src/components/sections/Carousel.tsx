@@ -30,7 +30,7 @@ const Carousel = ({ slides, currentSlide, setCurrentSlide }: Props) => {
             <motion.div
               initial={{ y: 550 }}
               animate={{ y: 0 }}
-              exit={{ y: -600, z: -10 }}
+              // exit={{ y: -600, z: -10 }}
               transition={{ duration: 1, ease: 'backOut' }}
               key={index}>
               <SlideComponent {...slide} />
