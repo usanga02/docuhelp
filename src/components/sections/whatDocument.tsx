@@ -57,7 +57,7 @@ const WhatDocument = (props: Props) => {
         </div>
         <ul className='flex flex-col gap-10 h-52 mt-12 overflow-y-hidden'>
           {slides.map((slide, index) => (
-            (index === currentSlide || index === currentSlide + 1) && <ServiceButtons className={index == currentSlide ? "border-[1px] border-white" : ""} onClick={() => setCurrentSlide(index)} title={slide.name} />
+            (index === currentSlide || index === currentSlide + 1) && <ServiceButtons className={index == currentSlide ? "border-[1px] border-white" : "bg-gradient-to-br from-transparent via-secondary(0.4) to-secondary"} onClick={() => setCurrentSlide(index)} title={slide.name} />
           ))}
         </ul>
       </div>
